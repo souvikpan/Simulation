@@ -29,6 +29,16 @@ def SUB():
     response = "sub = " + str(sub)
     return response
 
+@app.route("/mul", methods=["POST"])
+def MUL(): 
+    jsonStr = request.get_json()
+    jsonObj = json.loads(jsonStr)
+    
+    a=int(jsonObj['N1'])
+    b=int(jsonObj['N2'])
+    mul = a*b
+    response = "product = " + str(mul)
+    return response
 
 if __name__== "__main__":
     app.run()
