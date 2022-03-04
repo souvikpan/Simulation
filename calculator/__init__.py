@@ -29,6 +29,19 @@ def SUB():
     response = "sub = " + str(sub)
     return response
 
+@app.route("/div", methods=["POST"])
+def DIV():
+    jsonStr = request.get_json()
+    jsonObj = json.loads(jsonStr)
+
+    a=int(jsonObj['N1'])
+    b=int(jsonObj['N2'])
+    div = a/b
+    response = "div = " + str(div)
+    return response
+
+
+
 
 if __name__== "__main__":
     app.run()
