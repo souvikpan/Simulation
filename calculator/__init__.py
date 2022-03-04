@@ -40,6 +40,16 @@ def DIV():
     response = "div = " + str(div)
     return response
 
+@app.route("mod", methods=["POST"])
+def DIV():
+    jsonStr = request.get_json()
+    jsonObj = json.loads(jsonStr)
+
+    a=int(jsonObj['N1'])
+    b=int(jsonObj['N2'])
+    mod = a//b
+    response = "mod = " + str(mod)
+    return response
 
 
 
