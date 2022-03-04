@@ -41,7 +41,7 @@ def DIV():
     return response
 
 @app.route("mod", methods=["POST"])
-def DIV():
+def MOD():
     jsonStr = request.get_json()
     jsonObj = json.loads(jsonStr)
 
@@ -61,6 +61,19 @@ def MUL():
     mul = a*b
     response = "product = " + str(mul)
     return response
+
+@app.route("/exp", methods=["POST"])
+def EXP():
+    jsonStr = request.get_json()
+    jsonObj = json.loads(jsonStr)
+
+    a=int(jsonObj['N1'])
+    b=int(jsonObj['N2'])
+    exp = a**b
+    response = "answer = " + str(exp)
+    return response
+
+
 
 if __name__== "__main__":
     app.run()
